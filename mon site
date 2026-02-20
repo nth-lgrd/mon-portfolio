@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Développeur Web .Net</title>
+    <style>
+        /* --- VARIABLES ET THÈME --- */
+        :root {
+            --main-blue: #2c3e50;    /* Bleu sombre professionnel (inspire confiance) */
+            --accent-blue: #3498db;  /* Bleu clair pour l'interactivité */
+            --bg-light: #f4f7f6;     /* Gris très clair pour le confort visuel */
+            --white: #ffffff;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 10px;
+        }
+
+        /* --- RESET & STRUCTURE DE BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- BARRE DE NAVIGATION --- */
+        nav {
+            background: var(--main-blue);
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li { margin-left: 20px; }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent-blue); }
+
+        /* --- EN-TÊTE (HERO SECTION) --- */
+        header {
+            background: linear-gradient(135deg, var(--main-blue) 0%, var(--accent-blue) 100%);
+            color: white;
+            padding: 120px 5% 60px;
+            text-align: center;
+        }
+
+        header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* --- CONTENEUR --- */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            margin: 40px 0 20px;
+            color: var(--main-blue);
+            font-size: 1.6rem;
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 15px;
+        }
+
+        /* --- GRILLE DE PROJETS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- CARTE PROJET (CARD) --- */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            color: var(--main-blue);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        /* --- TAGS (MOTS-CLÉS) --- */
+        .tag-container {
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #ebf5fb;
+            color: var(--accent-blue);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin: 0 5px 5px 0;
+            text-transform: uppercase;
+        }
+
+        /* --- CONTENU DES CARTES --- */
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .card ul li { margin-bottom: 5px; }
+
+        /* --- BOUTONS / LIENS --- */
+        .btn-link {
+            margin-top: auto;
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-link:hover { background: var(--main-blue); }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: #888;
+            font-size: 0.85rem;
+            background: #fff;
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            header h2 { font-size: 1.8rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>Portfolio Étudiant</h1>
+    <ul>
+        <li><a href="#projets">Mes Projets</a></li>
+        <li><a href="mailto:ton.email@exemple.fr">Me Contacter</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h2>Nathan Lagarde</h2>
+    <p>Futur Développeur Web .Net | Recherche de stage 2026</p>
+</header>
+
+<div class="container">
+
+    <h2 id="projets" class="section-title">Réalisations Académiques</h2>
+
+    <div class="project-grid">
+
+        <div class="card">
+            <div class="tag-container">
+                <span class="tag">Communication</span>
+                <span class="tag">Anglais IT</span>
+                <span class="tag">Infrastructure</span>
+            </div>
+            <h3>Virtual Machines (SAÉ S1-03)</h3>
+            <a href="projets/sae-anglais/SAE-S103-LAGARDE(1).mp4" target="_blank" class="video-link">Voir la vidéo de présentation →</a>
+            <p><strong>Objectif :</strong> Expliquer les enjeux de la virtualisation pour les entreprises.</p>
+            <ul>
+                <li>Analyse technique des Hyperviseurs (Type 1 et 2).</li>
+                <li>Étude de la sécurité "Sandbox" pour l'isolation système.</li>
+                <li>Démonstration de l'efficience économique (Ratio 10:1).</li>
+            </ul>
+            <a href="projets/sae-anglais/SAE-S103-LAGARDE(1).mp4" target="_blank" class="btn-link">🎥 Voir la présentation vidéo</a>
+        </div>
+
+        <div class="card">
+            <div class="tag-container">
+                <span class="tag">C#</span>
+                <span class="tag">.Net</span>
+                <span class="tag">SQL</span>
+            </div>
+            <h3>Projet Développement Logiciel</h3>
+            <a href="Certains de mes projets" target="_blank" class="btn-link">📂 Voir certains de mes projets</a>
+            <p><strong>Objectif :</strong> Concevoir une application de gestion conforme aux besoins clients.</p>
+            <ul>
+                <li>Développement de l'architecture logicielle en .Net.</li>
+                <li>Mise en œuvre de tests de robustesse et optimisation.</li>
+                <li>Rédaction de la documentation technique détaillée.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>Candidature pour le poste de Stage Développeur Web .Net chez <strong>Coexya</strong>[cite: 19].</p>
+    <p>&copy; 2026 - Portfolio Professionnel</p>
+</footer>
+
+</body>
+</html>
